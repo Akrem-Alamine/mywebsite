@@ -241,6 +241,28 @@
             padding: 1.5rem;
         }
         
+        .image-slider {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .slider-image.active {
+            opacity: 1;
+        }
+        
         .btn {
             display: inline-block;
             padding: 0.8rem 2rem;
@@ -363,7 +385,13 @@
                 
                 <div class="gallery" style="margin-top: 2rem;">
                     <div class="gallery-item">
-                        <div class="gallery-img">🏆</div>
+                        <div class="gallery-img image-slider">
+                            <img src="TalanSummerCampImages/1.jpg" alt="Talan Summer Camp 1" class="slider-image active">
+                            <img src="TalanSummerCampImages/2.jpg" alt="Talan Summer Camp 2" class="slider-image">
+                            <img src="TalanSummerCampImages/3.jpg" alt="Talan Summer Camp 3" class="slider-image">
+                            <img src="TalanSummerCampImages/4.jpg" alt="Talan Summer Camp 4" class="slider-image">
+                            <img src="TalanSummerCampImages/5.jpg" alt="Talan Summer Camp 5" class="slider-image">
+                        </div>
                         <div class="gallery-content">
                             <h4>Award Ceremony</h4>
                             <p>Receiving the gold prize at Talan Summer Camp 2025</p>
@@ -589,7 +617,13 @@
         
         <div class="gallery">
             <div class="gallery-item">
-                <div class="gallery-img">🏆</div>
+                <div class="gallery-img image-slider">
+                    <img src="TalanSummerCampImages/1.jpg" alt="Talan Summer Camp 1" class="slider-image active">
+                    <img src="TalanSummerCampImages/2.jpg" alt="Talan Summer Camp 2" class="slider-image">
+                    <img src="TalanSummerCampImages/3.jpg" alt="Talan Summer Camp 3" class="slider-image">
+                    <img src="TalanSummerCampImages/4.jpg" alt="Talan Summer Camp 4" class="slider-image">
+                    <img src="TalanSummerCampImages/5.jpg" alt="Talan Summer Camp 5" class="slider-image">
+                </div>
                 <div class="gallery-content">
                     <h3>Talan Summer Camp 2025</h3>
                     <p>Gold Prize & First Place for Brand Orb AI - End-to-End Brand Development Platform</p>
@@ -598,7 +632,7 @@
             </div>
             
             <div class="gallery-item">
-                <div class="gallery-img">🥈</div>
+                <div class="gallery-img" style="background-image: url('SMU.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="gallery-content">
                     <h3>SMU Hackathon</h3>
                     <p>Second Place for innovative technology solution</p>
@@ -687,6 +721,19 @@
                 }
             });
         });
+
+        // Image slider for Talan Summer Camp
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-image');
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        // Auto-slide every 3 seconds
+        setInterval(nextSlide, 3000);
     </script>
 </body>
 </html>
