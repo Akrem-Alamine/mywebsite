@@ -15,23 +15,6 @@
     --gallery-bg: #ecf0f1;
 }
 
-[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --card-bg: #2d2d2d;
-    --nav-bg: #2d2d2d;
-    --border-color: rgba(255,255,255,0.1);
-    --logo-color: #e0e0e0;
-    --nav-link-color: #b0b0b0;
-    --nav-link-hover: #4a90e2;
-    --heading-color: #e0e0e0;
-    --item-title-color: #e0e0e0;
-    --date-color: #a0a0a0;
-    --company-color: #4a90e2;
-    --footer-bg: #1a1a1a;
-    --gallery-bg: #3a3a3a;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -120,15 +103,6 @@ body {
     transform: scale(0.98);
 }
 
-[data-theme="dark"] .toggle-btn {
-    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
-}
-
-[data-theme="dark"] .toggle-btn:hover {
-    background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
-}
-
 .toggle-point {
     width: 20px;
     height: 20px;
@@ -142,18 +116,6 @@ body {
     font-size: 0.7rem;
     position: relative;
     z-index: 1;
-}
-
-[data-theme="dark"] .toggle-point {
-    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
-}
-
-.theme-toggle .toggle-point {
-    transform: translateX(2px);
-}
-
-.theme-toggle.active .toggle-point {
-    transform: translateX(26px);
 }
 
 .lang-toggle .toggle-point {
@@ -181,10 +143,6 @@ body {
 
 .toggle-btn.active .toggle-bg {
     opacity: 1;
-}
-
-[data-theme="dark"] .toggle-bg {
-    background: linear-gradient(145deg, #4a90e2, #357abd);
 }
 
 .hero {
@@ -361,6 +319,30 @@ body {
     transition: background-color 0.3s;
 }
 
+/* Special styling for the volunteering section full-width item */
+.gallery-item[style*="grid-column"] {
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.gallery-item[style*="grid-column"] .gdgc-journey {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.gallery-item[style*="grid-column"] .gallery-content {
+    background: var(--card-bg);
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 5px 15px var(--border-color);
+}
+
 .gallery-img {
     width: 100%;
     height: 300px;
@@ -430,8 +412,200 @@ body {
     transition: background-color 0.3s;
 }
 
-[data-theme="dark"] .footer {
-    border-top: 1px solid var(--border-color);
+/* GDGC Journey Styles */
+.gdgc-journey {
+    background: var(--card-bg);
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--border-color);
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+.gdgc-content {
+    color: var(--text-color);
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 2rem;
+    background: transparent;
+    margin: 0;
+}
+
+.gdgc-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.journey-text {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.journey-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journey-step {
+    text-align: center;
+    padding: 0;
+    background: var(--gallery-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16/23; /* Maintain 16:23 aspect ratio */
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.journey-step:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.step-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.journey-step:hover .step-badge {
+    transform: scale(1.02);
+}
+
+.step-title {
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0.4rem;
+    font-size: 0.7rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    width: 100%;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.journey-step:hover .step-title {
+    opacity: 1;
+}
+
+/* GDGC Slider Styles */
+.gdgc-slider {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background: var(--gallery-bg);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.gdgc-slider .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.gdgc-slider .slider-image.active {
+    opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .gdgc-journey {
+        padding: 0;
+    }
+    
+    .gdgc-content {
+        padding: 1.5rem;
+    }
+    
+    .gdgc-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .journey-highlights {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8rem;
+        max-width: 400px;
+    }
+    
+    .journey-step {
+        /* aspect-ratio will automatically adjust height */
+    }
+    
+    .step-title {
+        font-size: 0.6rem;
+        padding: 0.3rem;
+    }
+    
+    .gdgc-slider {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gdgc-content {
+        padding: 1rem;
+    }
+    
+    .gdgc-title {
+        font-size: 1.3rem;
+    }
+    
+    .journey-highlights {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        max-width: 240px;
+    }
+    
+    .step-title {
+        font-size: 0.65rem;
+        padding: 0.3rem;
+    }
+    
+    .journey-text {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .gdgc-slider {
+        height: 250px;
+        margin-top: 1.5rem;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -506,10 +680,6 @@ body {
         width: 16px;
         height: 16px;
         font-size: 0.6rem;
-    }
-    
-    .theme-toggle.active .toggle-point {
-        transform: translateX(20px);
     }
     
     .lang-toggle.active .toggle-point {
@@ -632,10 +802,6 @@ body {
         font-size: 0.5rem;
     }
     
-    .theme-toggle.active .toggle-point {
-        transform: translateX(17px);
-    }
-    
     .lang-toggle.active .toggle-point {
         transform: translateX(17px);
     }
@@ -732,17 +898,6 @@ body {
         padding: 0.8rem;
     }
     
-    .gallery-content h3,
-    .gallery-content h4 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .gallery-content p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-    
     .tech-tag {
         padding: 0.2rem 0.5rem;
         font-size: 0.75rem;
@@ -751,11 +906,6 @@ body {
     .award-badge {
         padding: 0.2rem 0.5rem;
         font-size: 0.75rem;
-    }
-    
-    .footer {
-        padding: 1.5rem 0;
-        font-size: 0.9rem;
     }
 }
 
@@ -969,10 +1119,6 @@ body {
 @media (prefers-contrast: high) {
     :root {
         --border-color: rgba(0,0,0,0.3);
-    }
-    
-    [data-theme="dark"] {
-        --border-color: rgba(255,255,255,0.3);
     }
     
     .experience-item,

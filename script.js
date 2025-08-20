@@ -41,9 +41,13 @@ function initializeSlider(sliderContainer) {
         }
     }
     
-    // Start sliding every 10 seconds
+    // Check if this is the GDGC slider (9 images) for faster timing
+    const isGDGCSlider = slides.length === 9;
+    const interval = isGDGCSlider ? 2000 : 3000; // 2 seconds for GDGC, 3 seconds for others
+    
+    // Start sliding
     if (slides.length > 0) {
-        setInterval(nextSlide, 3000);
+        setInterval(nextSlide, interval);
     }
 }
 
@@ -55,10 +59,7 @@ window.addEventListener('load', function() {
     });
 });
 
-// Theme and Language functionality
-const themeToggle = document.getElementById('themeToggle');
-const langToggle = document.getElementById('langToggle');
-let currentTheme = 'light';
+// Language functionality
 let currentLang = 'en';
 
 function updateLanguageContent() {
@@ -389,26 +390,6 @@ function updateLanguageContent() {
     });
 }
 
-// Theme toggle functionality
-function toggleTheme() {
-    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('.toggle-icon');
-    
-    if (currentTheme === 'dark') {
-        themeToggle.classList.add('active');
-        themeIcon.textContent = '☀️';
-    } else {
-        themeToggle.classList.remove('active');
-        themeIcon.textContent = '🌙';
-    }
-    
-    // Save theme preference
-    localStorage.setItem('theme', currentTheme);
-}
-
 // Language toggle functionality
 function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'fr' : 'en';
@@ -436,15 +417,9 @@ function toggleLanguage() {
     localStorage.setItem('language', currentLang);
 }
 
-// Initialize theme and language from localStorage
+// Initialize language from localStorage
 function initializePreferences() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
     const savedLang = localStorage.getItem('language') || 'en';
-    
-    if (savedTheme === 'dark') {
-        currentTheme = 'light';
-        toggleTheme();
-    }
     
     if (savedLang === 'fr') {
         currentLang = 'en';
@@ -454,12 +429,7 @@ function initializePreferences() {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    const themeToggleBtn = document.getElementById('themeToggle');
     const langToggleBtn = document.getElementById('langToggle');
-    
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', toggleTheme);
-    }
     
     if (langToggleBtn) {
         langToggleBtn.addEventListener('click', toggleLanguage);
