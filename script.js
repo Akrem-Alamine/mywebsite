@@ -85,7 +85,7 @@ function updateLanguageContent() {
             'Projets': 'Projects',
             
             // Hero section
-            'hero-subtitle': 'AI & Cloud Engineer | Full-Stack Developer | Innovation Enthusiast',
+            'hero-subtitle': 'OCI*1 | Azure *1 | ACE *1 | Cloud Engineering Intern @RIF | AI Summer Intern @Talan | GDG FST Organizer',
             
             // Experience section
             'cloud-engineer-title': 'Cloud Engineer Intern',
@@ -194,7 +194,7 @@ function updateLanguageContent() {
             'Bénévolat & Communauté': 'Bénévolat & Communauté',
             
             // Hero section
-            'hero-subtitle': 'Ingénieur IA & Cloud | Développeur Full-Stack | Passionné d\'Innovation',
+            'hero-subtitle': 'OCI*1 | Azure *1 | ACE *1 | Stagiaire Ingénieur Cloud @RIF | Stagiaire IA @Talan | Organisateur GDG FST',
             
             // Experience section
             'cloud-engineer-title': 'Stagiaire Ingénieur Cloud',
