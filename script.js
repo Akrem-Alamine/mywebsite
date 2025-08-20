@@ -318,6 +318,63 @@ function updateLanguageContent() {
         { selector: '[data-translate="software-dev-desc1"]', key: 'software-dev-desc1' },
         { selector: '[data-translate="software-dev-desc2"]', key: 'software-dev-desc2' },
         
+        // Education section
+        { selector: '[data-translate="eng-degree-title"]', key: 'eng-degree-title' },
+        { selector: '[data-translate="eng-degree-school"]', key: 'eng-degree-school' },
+        { selector: '[data-translate="eng-degree-location"]', key: 'eng-degree-location' },
+        { selector: '[data-translate="eng-degree-skill1"]', key: 'eng-degree-skill1' },
+        { selector: '[data-translate="eng-degree-skill2"]', key: 'eng-degree-skill2' },
+        { selector: '[data-translate="eng-degree-skill3"]', key: 'eng-degree-skill3' },
+        { selector: '[data-translate="eng-degree-skill4"]', key: 'eng-degree-skill4' },
+        
+        { selector: '[data-translate="prep-classes-title"]', key: 'prep-classes-title' },
+        { selector: '[data-translate="prep-classes-school"]', key: 'prep-classes-school' },
+        { selector: '[data-translate="prep-classes-location"]', key: 'prep-classes-location' },
+        { selector: '[data-translate="prep-classes-skill1"]', key: 'prep-classes-skill1' },
+        { selector: '[data-translate="prep-classes-skill2"]', key: 'prep-classes-skill2' },
+        { selector: '[data-translate="prep-classes-skill3"]', key: 'prep-classes-skill3' },
+        { selector: '[data-translate="prep-classes-skill4"]', key: 'prep-classes-skill4' },
+        
+        // Projects section
+        { selector: '[data-translate="project1-title"]', key: 'project1-title' },
+        { selector: '[data-translate="project1-desc"]', key: 'project1-desc' },
+        { selector: '[data-translate="project2-title"]', key: 'project2-title' },
+        { selector: '[data-translate="project2-desc"]', key: 'project2-desc' },
+        { selector: '[data-translate="project3-title"]', key: 'project3-title' },
+        { selector: '[data-translate="project3-desc"]', key: 'project3-desc' },
+        { selector: '[data-translate="project4-title"]', key: 'project4-title' },
+        { selector: '[data-translate="project4-desc"]', key: 'project4-desc' },
+        
+        // Certifications section
+        { selector: '[data-translate="azure-cert-title"]', key: 'azure-cert-title' },
+        { selector: '[data-translate="azure-cert-desc"]', key: 'azure-cert-desc' },
+        { selector: '[data-translate="oci-cert-title"]', key: 'oci-cert-title' },
+        { selector: '[data-translate="oci-cert-desc"]', key: 'oci-cert-desc' },
+        { selector: '[data-translate="aviatrix-cert-title"]', key: 'aviatrix-cert-title' },
+        { selector: '[data-translate="aviatrix-cert-desc"]', key: 'aviatrix-cert-desc' },
+        
+        // Hackathons section
+        { selector: '[data-translate="talan-hackathon-title"]', key: 'talan-hackathon-title' },
+        { selector: '[data-translate="talan-hackathon-desc"]', key: 'talan-hackathon-desc' },
+        { selector: '[data-translate="talan-winner"]', key: 'talan-winner' },
+        { selector: '[data-translate="smu-hackathon-title"]', key: 'smu-hackathon-title' },
+        { selector: '[data-translate="smu-hackathon-desc"]', key: 'smu-hackathon-desc' },
+        { selector: '[data-translate="smu-second"]', key: 'smu-second' },
+        
+        // Volunteering section
+        { selector: '[data-translate="gdgc-journey"]', key: 'gdgc-journey' },
+        { selector: '[data-translate="gdgc-member"]', key: 'gdgc-member' },
+        { selector: '[data-translate="gdgc-year1"]', key: 'gdgc-year1' },
+        { selector: '[data-translate="gdgc-media"]', key: 'gdgc-media' },
+        { selector: '[data-translate="gdgc-year2"]', key: 'gdgc-year2' },
+        { selector: '[data-translate="gdgc-leader"]', key: 'gdgc-leader' },
+        { selector: '[data-translate="gdgc-year3"]', key: 'gdgc-year3' },
+        { selector: '[data-translate="gdgc-mentor"]', key: 'gdgc-mentor' },
+        { selector: '[data-translate="gdgc-current"]', key: 'gdgc-current' },
+        { selector: '[data-translate="gdgc-title"]', key: 'gdgc-title' },
+        { selector: '[data-translate="gdgc-desc"]', key: 'gdgc-desc' },
+        { selector: '[data-translate="gdgc-badge"]', key: 'gdgc-badge' },
+        
         // Footer
         { selector: '[data-translate="footer-rights"]', key: 'footer-rights' },
         { selector: '[data-translate="footer-tagline"]', key: 'footer-tagline' }
