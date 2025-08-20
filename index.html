@@ -4,321 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akrem ALAMINE - AI & Cloud Engineer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        .navbar {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            border: 5px solid white;
-            background: #ddd;
-            background-image: url('profile.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .section {
-            padding: 80px 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-        
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #2c3e50;
-            position: relative;
-        }
-        
-        .section h2::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: #3498db;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .experience-item,
-        .education-item,
-        .project-item,
-        .cert-item {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        
-        .experience-item:hover,
-        .education-item:hover,
-        .project-item:hover,
-        .cert-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .item-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .item-date {
-            color: #7f8c8d;
-            font-weight: 500;
-        }
-        
-        .item-company {
-            color: #3498db;
-            margin-bottom: 0.5rem;
-        }
-        
-        .item-description ul {
-            margin-left: 1.5rem;
-        }
-        
-        .item-description li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .tech-tag {
-            background: #ecf0f1;
-            color: #2c3e50;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .award-badge {
-            background: #f39c12;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            display: inline-block;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .gallery-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        .gallery-img {
-            width: 100%;
-            height: 200px;
-            background: #ecf0f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #bdc3c7;
-        }
-        
-        .gallery-content {
-            padding: 1.5rem;
-        }
-        
-        .image-slider {
-            width: 100%;
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .slider-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .slider-image.active {
-            opacity: 1;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            margin-top: 1rem;
-        }
-        
-        .btn:hover {
-            background: #2980b9;
-        }
-        
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .item-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Akrem ALAMINE</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#hackathons">Hackathons</a></li>
-                <li><a href="#volunteering">Volunteering</a></li>
+                <li><a href="#home" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="#experience" data-en="Experience" data-fr="Expérience">Experience</a></li>
+                <li><a href="#education" data-en="Education" data-fr="Formation">Education</a></li>
+                <li><a href="#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
+                <li><a href="#certifications" data-en="Certifications" data-fr="Certifications">Certifications</a></li>
+                <li><a href="#hackathons" data-en="Hackathons" data-fr="Hackathons">Hackathons</a></li>
+                <li><a href="#volunteering" data-en="Volunteering" data-fr="Bénévolat">Volunteering</a></li>
             </ul>
+            <div class="nav-controls">
+                <button class="toggle-btn theme-toggle" id="themeToggle">
+                    <div class="toggle-bg"></div>
+                    <div class="toggle-point">
+                        <span class="toggle-icon">🌙</span>
+                    </div>
+                </button>
+                <button class="toggle-btn lang-toggle" id="langToggle">
+                    <div class="toggle-bg"></div>
+                    <div class="toggle-point">
+                        <span class="toggle-text">EN</span>
+                    </div>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -326,7 +40,7 @@
         <div class="hero-content">
             <div class="profile-img"></div>
             <h1>Akrem ALAMINE</h1>
-            <p>AI & Cloud Engineer | Full-Stack Developer | Innovation Enthusiast</p>
+            <p data-translate="hero-subtitle">AI & Cloud Engineer | Full-Stack Developer | Innovation Enthusiast</p>
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📧</span>
@@ -354,15 +68,15 @@
         <div class="experience-item">
             <div class="item-header">
                 <div>
-                    <div class="item-title">Cloud Engineer Intern</div>
-                    <div class="item-company">RIF (Rassemblement des Ingénieurs Francophones)</div>
-                    <div style="color: #7f8c8d;">Paris, France (Remote)</div>
+                    <div class="item-title" data-translate="cloud-engineer-title">Cloud Engineer Intern</div>
+                    <div class="item-company" data-translate="cloud-engineer-company">RIF (Rassemblement des Ingénieurs Francophones)</div>
+                    <div style="color: #7f8c8d;" data-translate="cloud-engineer-location">Paris, France (Remote)</div>
                 </div>
                 <div class="item-date">07/2025 -- Present</div>
             </div>
             <div class="item-description">
                 <ul>
-                    <li>Design and implementation of a private cloud architecture with 99.9% availability</li>
+                    <li data-translate="cloud-engineer-desc">Design and implementation of a private cloud architecture with 99.9% availability</li>
                 </ul>
             </div>
         </div>
@@ -370,47 +84,43 @@
         <div class="experience-item">
             <div class="item-header">
                 <div>
-                    <div class="item-title">AI Engineer Intern</div>
-                    <div class="item-company">Talan Tunisia</div>
-                    <div style="color: #7f8c8d;">Tunis, Tunisia (Full-time - On site)</div>
+                    <div class="item-title" data-translate="ai-engineer-title">AI Engineer Intern</div>
+                    <div class="item-company" data-translate="ai-engineer-company">Talan Tunisia</div>
+                    <div style="color: #7f8c8d;" data-translate="ai-engineer-location">Tunis, Tunisia (Full-time - On site)</div>
                 </div>
                 <div class="item-date">07/2025 -- Present</div>
             </div>
             <div class="item-description">
                 <ul>
-                    <li>Development of an AI tool to support entrepreneurs from ideation to market launch</li>
-                    <li>Built end-to-end AI platform using LangChain, LangGraph, Python, and Next.js</li>
+                    <li data-translate="ai-engineer-desc1">Development of an AI tool to support entrepreneurs from ideation to market launch</li>
+                    <li data-translate="ai-engineer-desc2">Built end-to-end AI platform using LangChain, LangGraph, Python, and Next.js</li>
                 </ul>
-                <div class="award-badge">🏆 Gold Prize & First Place - Talan Summer Camp 2025</div>
+                <div class="award-badge" data-translate="ai-engineer-award">🏆 Gold Prize & First Place - Talan Summer Camp 2025</div>
                 
                 <div class="gallery" style="margin-top: 2rem;">
                     <div class="gallery-item">
                         <div class="gallery-img image-slider">
-                            <img src="TalanSummerCampImages/1.jpg" alt="Talan Summer Camp 1" class="slider-image active">
-                            <img src="TalanSummerCampImages/2.jpg" alt="Talan Summer Camp 2" class="slider-image">
-                            <img src="TalanSummerCampImages/3.jpg" alt="Talan Summer Camp 3" class="slider-image">
-                            <img src="TalanSummerCampImages/4.jpg" alt="Talan Summer Camp 4" class="slider-image">
-                            <img src="TalanSummerCampImages/5.jpg" alt="Talan Summer Camp 5" class="slider-image">
+                            <img src="TalanSummerCampImages/1.png" alt="Talan Summer Camp 1" class="slider-image active">
+                            <img src="TalanSummerCampImages/2.png" alt="Talan Summer Camp 2" class="slider-image">
+                            <img src="TalanSummerCampImages/3.png" alt="Talan Summer Camp 3" class="slider-image">
+                            <img src="TalanSummerCampImages/4.png" alt="Talan Summer Camp 4" class="slider-image">
                         </div>
                         <div class="gallery-content">
-                            <h4>Award Ceremony</h4>
-                            <p>Receiving the gold prize at Talan Summer Camp 2025</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="gallery-img">💻</div>
-                        <div class="gallery-content">
-                            <h4>Brand Orb AI Demo</h4>
-                            <p>Live demonstration of the AI platform features</p>
+                            <h4 data-translate="award-ceremony">Award Ceremony</h4>
+                            <p data-translate="award-ceremony-desc">Receiving the gold prize at Talan Summer Camp 2025</p>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <div class="gallery-img">👥</div>
+                        <div class="gallery-img">
+                            <video autoplay loop muted style="width: 100%; height: 100%; object-fit: cover;">
+                                <source src="TalanSummerCampImages/Demo.mp4" type="video/mp4">
+                                💻
+                            </video>
+                        </div>
                         <div class="gallery-content">
-                            <h4>Team Collaboration</h4>
-                            <p>Working with the development team at Talan</p>
+                            <h4 data-translate="demo-title">Brand Orb AI Demo</h4>
+                            <p data-translate="demo-desc">Live demonstration of the AI platform features</p>
                         </div>
                     </div>
                 </div>
@@ -420,16 +130,16 @@
         <div class="experience-item">
             <div class="item-header">
                 <div>
-                    <div class="item-title">Software Development Intern</div>
-                    <div class="item-company">Société Variété Industrielle</div>
-                    <div style="color: #7f8c8d;">Tunis, Tunisia</div>
+                    <div class="item-title" data-translate="software-dev-title">Software Development Intern</div>
+                    <div class="item-company" data-translate="software-dev-company">Société Variété Industrielle</div>
+                    <div style="color: #7f8c8d;" data-translate="software-dev-location">Tunis, Tunisia</div>
                 </div>
                 <div class="item-date">07/2024 -- 09/2024</div>
             </div>
             <div class="item-description">
                 <ul>
-                    <li>Developed a Flutter application for remote control of outdoor lighting via ESP8266</li>
-                    <li>Integrated IoT protocols enabling real-time control</li>
+                    <li data-translate="software-dev-desc1">Developed a Flutter application for remote control of outdoor lighting via ESP8266</li>
+                    <li data-translate="software-dev-desc2">Integrated IoT protocols enabling real-time control</li>
                 </ul>
             </div>
         </div>
@@ -441,18 +151,18 @@
         <div class="education-item">
             <div class="item-header">
                 <div>
-                    <div class="item-title">Engineering Degree in Computer Science</div>
-                    <div class="item-company">Faculty of Sciences of Tunis</div>
-                    <div style="color: #7f8c8d;">Tunis, Tunisia</div>
+                    <div class="item-title" data-translate="eng-degree-title">Engineering Degree in Computer Science</div>
+                    <div class="item-company" data-translate="eng-degree-school">Faculty of Sciences of Tunis</div>
+                    <div style="color: #7f8c8d;" data-translate="eng-degree-location">Tunis, Tunisia</div>
                 </div>
                 <div class="item-date">2023 - Present</div>
             </div>
             <div class="item-description">
                 <ul>
-                    <li><strong>Cloud, Networks & DevOps:</strong> Advanced AWS experience, cloud deployment, IP/industrial/wireless networks, security of on-premises and cloud infrastructures</li>
-                    <li><strong>Advanced Java/JEE Development:</strong> In-depth mastery of Java, Java EE (servlets, JSP, EJB), web and distributed application design</li>
-                    <li><strong>Programming Languages:</strong> C/C++, PHP, SQL, PL/SQL, HTML, CSS, JavaScript</li>
-                    <li><strong>Databases & System Administration:</strong> Database management, Linux administration, distributed systems</li>
+                    <li data-translate="eng-degree-skill1"><strong>Cloud, Networks & DevOps:</strong> Advanced AWS experience, cloud deployment, IP/industrial/wireless networks, security of on-premises and cloud infrastructures</li>
+                    <li data-translate="eng-degree-skill2"><strong>Advanced Java/JEE Development:</strong> In-depth mastery of Java, Java EE (servlets, JSP, EJB), web and distributed application design</li>
+                    <li data-translate="eng-degree-skill3"><strong>Programming Languages:</strong> C/C++, PHP, SQL, PL/SQL, HTML, CSS, JavaScript</li>
+                    <li data-translate="eng-degree-skill4"><strong>Databases & System Administration:</strong> Database management, Linux administration, distributed systems</li>
                 </ul>
             </div>
         </div>
@@ -460,18 +170,18 @@
         <div class="education-item">
             <div class="item-header">
                 <div>
-                    <div class="item-title">Two-Year Preparatory Classes in Computer Science</div>
-                    <div class="item-company">Faculty of Sciences of Tunis</div>
-                    <div style="color: #7f8c8d;">Tunis, Tunisia</div>
+                    <div class="item-title" data-translate="prep-classes-title">Two-Year Preparatory Classes in Computer Science</div>
+                    <div class="item-company" data-translate="prep-classes-school">Faculty of Sciences of Tunis</div>
+                    <div style="color: #7f8c8d;" data-translate="prep-classes-location">Tunis, Tunisia</div>
                 </div>
                 <div class="item-date">2021 - 2023</div>
             </div>
             <div class="item-description">
                 <ul>
-                    <li><strong>Mathematics & Physics:</strong> Advanced calculus, linear algebra, differential equations, mechanics, and electromagnetism</li>
-                    <li><strong>Computer Science Fundamentals:</strong> Algorithms, data structures, programming fundamentals, and computational thinking</li>
-                    <li><strong>Core Programming:</strong> Introduction to C/C++, Python, and object-oriented programming concepts</li>
-                    <li><strong>Academic Excellence:</strong> Strong foundation in theoretical computer science and mathematical modeling</li>
+                    <li data-translate="prep-classes-skill1"><strong>Mathematics & Physics:</strong> Advanced calculus, linear algebra, differential equations, mechanics, and electromagnetism</li>
+                    <li data-translate="prep-classes-skill2"><strong>Computer Science Fundamentals:</strong> Algorithms, data structures, programming fundamentals, and computational thinking</li>
+                    <li data-translate="prep-classes-skill3"><strong>Core Programming:</strong> Introduction to C/C++, Python, and object-oriented programming concepts</li>
+                    <li data-translate="prep-classes-skill4"><strong>Academic Excellence:</strong> Strong foundation in theoretical computer science and mathematical modeling</li>
                 </ul>
             </div>
         </div>
@@ -484,11 +194,11 @@
             <div class="project-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">Brand Orb AI - End-to-End Brand Development Platform</div>
+                        <div class="item-title" data-translate="project1-title">Brand Orb AI - End-to-End Brand Development Platform</div>
                     </div>
                 </div>
                 <div class="item-description">
-                    <p>AI-powered platform guiding entrepreneurs from ideation to market launch with automated brand identity creation and social media deployment.</p>
+                    <p data-translate="project1-desc">AI-powered platform guiding entrepreneurs from ideation to market launch with automated brand identity creation and social media deployment.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
@@ -506,11 +216,11 @@
             <div class="project-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">AWS Web Application Deployment</div>
+                        <div class="item-title" data-translate="project2-title">AWS Web Application Deployment</div>
                     </div>
                 </div>
                 <div class="item-description">
-                    <p>High-availability cloud architecture with frontend, backend, database, storage, monitoring, and security.</p>
+                    <p data-translate="project2-desc">High-availability cloud architecture with frontend, backend, database, storage, monitoring, and security.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">AWS</span>
@@ -529,11 +239,11 @@
             <div class="project-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">Car Rental Web Application - SOA Architecture</div>
+                        <div class="item-title" data-translate="project3-title">Car Rental Web Application - SOA Architecture</div>
                     </div>
                 </div>
                 <div class="item-description">
-                    <p>Service-oriented architecture implementation for car rental management system.</p>
+                    <p data-translate="project3-desc">Service-oriented architecture implementation for car rental management system.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">SOA</span>
@@ -550,11 +260,11 @@
             <div class="project-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">Flutter IoT Lighting Control Application</div>
+                        <div class="item-title" data-translate="project4-title">Flutter IoT Lighting Control Application</div>
                     </div>
                 </div>
                 <div class="item-description">
-                    <p>Mobile application for remote control of outdoor lighting systems using IoT protocols.</p>
+                    <p data-translate="project4-desc">Mobile application for remote control of outdoor lighting systems using IoT protocols.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">Flutter</span>
@@ -569,44 +279,44 @@
     <section id="certifications" class="section">
         <h2>Certifications</h2>
         
-        <a href="https://www.credly.com/badges/your-azure-fundamentals-badge" target="_blank" style="text-decoration: none; color: inherit;">
+        <a href="https://www.credly.com/badges/52de20a5-e002-4a62-a2be-ebea7702c698/public_url" target="_blank" style="text-decoration: none; color: inherit;">
             <div class="cert-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">Microsoft Certified: Azure Fundamentals</div>
+                        <div class="item-title" data-translate="azure-cert-title">Microsoft Certified: Azure Fundamentals</div>
                     </div>
                     <div class="item-date">19/11/2024</div>
                 </div>
                 <div class="item-description">
-                    <p>Demonstrated basic knowledge of cloud services and their provisioning via Microsoft Azure.</p>
+                    <p data-translate="azure-cert-desc">Demonstrated basic knowledge of cloud services and their provisioning via Microsoft Azure.</p>
                 </div>
             </div>
         </a>
 
-        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=your-oci-badge" target="_blank" style="text-decoration: none; color: inherit;">
+        <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=28FE2D8153AC22C79947644ED6DE472073AC4929AA46483977EABDE7151A8593" target="_blank" style="text-decoration: none; color: inherit;">
             <div class="cert-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">Oracle Cloud Infrastructure 2025 Certified Foundations Associate</div>
+                        <div class="item-title" data-translate="oci-cert-title">Oracle Cloud Infrastructure 2025 Certified Foundations Associate</div>
                     </div>
                     <div class="item-date">19/07/2025</div>
                 </div>
                 <div class="item-description">
-                    <p>Validation of fundamental knowledge of the main public cloud services of Oracle Cloud Infrastructure (OCI).</p>
+                    <p data-translate="oci-cert-desc">Validation of fundamental knowledge of the main public cloud services of Oracle Cloud Infrastructure (OCI).</p>
                 </div>
             </div>
         </a>
 
-        <a href="https://www.credly.com/badges/your-aviatrix-ace-badge" target="_blank" style="text-decoration: none; color: inherit;">
+        <a href="https://www.credly.com/badges/02b2d013-0393-49bc-973e-51341f5544fb/public_url" target="_blank" style="text-decoration: none; color: inherit;">
             <div class="cert-item">
                 <div class="item-header">
                     <div>
-                        <div class="item-title">Multicloud Network Associate – Aviatrix Certified Engineer (ACE)</div>
+                        <div class="item-title" data-translate="aviatrix-cert-title">Multicloud Network Associate – Aviatrix Certified Engineer (ACE)</div>
                     </div>
                     <div class="item-date">01/08/2025</div>
                 </div>
                 <div class="item-description">
-                    <p>Validates understanding of basic networking and security concepts across AWS, Azure, GCP, and OCI.</p>
+                    <p data-translate="aviatrix-cert-desc">Validates understanding of basic networking and security concepts across AWS, Azure, GCP, and OCI.</p>
                 </div>
             </div>
         </a>
@@ -618,25 +328,24 @@
         <div class="gallery">
             <div class="gallery-item">
                 <div class="gallery-img image-slider">
-                    <img src="TalanSummerCampImages/1.jpg" alt="Talan Summer Camp 1" class="slider-image active">
-                    <img src="TalanSummerCampImages/2.jpg" alt="Talan Summer Camp 2" class="slider-image">
-                    <img src="TalanSummerCampImages/3.jpg" alt="Talan Summer Camp 3" class="slider-image">
-                    <img src="TalanSummerCampImages/4.jpg" alt="Talan Summer Camp 4" class="slider-image">
-                    <img src="TalanSummerCampImages/5.jpg" alt="Talan Summer Camp 5" class="slider-image">
+                    <img src="TalanSummerCampImages/1.png" alt="Talan Summer Camp 1" class="slider-image active">
+                    <img src="TalanSummerCampImages/2.png" alt="Talan Summer Camp 2" class="slider-image">
+                    <img src="TalanSummerCampImages/3.png" alt="Talan Summer Camp 3" class="slider-image">
+                    <img src="TalanSummerCampImages/4.png" alt="Talan Summer Camp 4" class="slider-image">
                 </div>
                 <div class="gallery-content">
-                    <h3>Talan Summer Camp 2025</h3>
-                    <p>Gold Prize & First Place for Brand Orb AI - End-to-End Brand Development Platform</p>
-                    <div class="award-badge">🥇 Winner</div>
+                    <h3 data-translate="talan-hackathon-title">Talan Summer Camp 2025</h3>
+                    <p data-translate="talan-hackathon-desc">Gold Prize & First Place for Brand Orb AI - End-to-End Brand Development Platform</p>
+                    <div class="award-badge" data-translate="talan-winner">🥇 Winner</div>
                 </div>
             </div>
             
             <div class="gallery-item">
                 <div class="gallery-img" style="background-image: url('SMU.jpg'); background-size: cover; background-position: center;"></div>
                 <div class="gallery-content">
-                    <h3>SMU Hackathon</h3>
-                    <p>Second Place for innovative technology solution</p>
-                    <div class="award-badge" style="background: #95a5a6;">🥈 Second Place</div>
+                    <h3 data-translate="smu-hackathon-title">SMU Hackathon</h3>
+                    <p data-translate="smu-hackathon-desc">Second Place for innovative technology solution</p>
+                    <div class="award-badge" style="background: #95a5a6;" data-translate="smu-second">🥈 Second Place</div>
                 </div>
             </div>
         </div>
@@ -649,91 +358,48 @@
             <div class="gallery-item" style="grid-column: 1 / -1;">
                 <div class="gallery-img" style="height: auto; padding: 2rem; background: linear-gradient(135deg, #4285f4 0%, #ea4335 25%, #34a853 50%, #fbbc04 75%, #4285f4 100%);">
                     <div style="color: white; text-align: center;">
-                        <h3 style="margin-bottom: 1rem;">GDGC FST Journey</h3>
+                        <h3 style="margin-bottom: 1rem;" data-translate="gdgc-journey">GDGC FST Journey</h3>
                         <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem;">
                             <div style="text-align: center;">
                                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌱</div>
-                                <div style="font-weight: bold;">Member</div>
-                                <div style="font-size: 0.9rem; opacity: 0.8;">1st Year</div>
+                                <div style="font-weight: bold;" data-translate="gdgc-member">Member</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;" data-translate="gdgc-year1">1st Year</div>
                             </div>
                             <div style="color: white; font-size: 1.5rem;">→</div>
                             <div style="text-align: center;">
                                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
-                                <div style="font-weight: bold;">Media Manager</div>
-                                <div style="font-size: 0.9rem; opacity: 0.8;">2nd Year</div>
+                                <div style="font-weight: bold;" data-translate="gdgc-media">Media Manager</div>
+                                <div class="item-date" data-translate="gdgc-year2">2nd Year</div>
                             </div>
                             <div style="color: white; font-size: 1.5rem;">→</div>
                             <div style="text-align: center;">
                                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
-                                <div style="font-weight: bold;">Leader & Organizer</div>
-                                <div style="font-size: 0.9rem; opacity: 0.8;">3rd Year</div>
+                                <div style="font-weight: bold;" data-translate="gdgc-leader">Leader & Organizer</div>
+                                <div class="item-date" data-translate="gdgc-year3">3rd Year</div>
                             </div>
                             <div style="color: white; font-size: 1.5rem;">→</div>
                             <div style="text-align: center;">
                                 <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏅</div>
-                                <div style="font-weight: bold;">Mentor</div>
-                                <div style="font-size: 0.9rem; opacity: 0.8;">Current</div>
+                                <div style="font-weight: bold;" data-translate="gdgc-mentor">Mentor</div>
+                                <div class="item-date" data-translate="gdgc-current">Current</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-content">
-                    <h3>Google Developer Groups on Campus FST - Complete Journey</h3>
-                    <p>Four-year progressive journey from member to mentor in Google Developer Groups on Campus at Faculty of Sciences of Tunis, demonstrating leadership growth and community dedication.</p>
-                    <div class="award-badge" style="background: linear-gradient(135deg, #4285f4, #ea4335);">🎯 Complete Leadership Path</div>
+                    <h3 data-translate="gdgc-title">Google Developer Groups on Campus FST - Complete Journey</h3>
+                    <p data-translate="gdgc-desc">Four-year progressive journey from member to mentor in Google Developer Groups on Campus at Faculty of Sciences of Tunis, demonstrating leadership growth and community dedication.</p>
+                    <div class="award-badge" style="background: linear-gradient(135deg, #4285f4, #ea4335);" data-translate="gdgc-badge">🎯 Complete Leadership Path</div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 Akrem ALAMINE. All rights reserved.</p>
-        <p>AI & Cloud Engineer | Building the future with technology</p>
+        <p data-translate="footer-rights">&copy; 2025 Akrem ALAMINE. All rights reserved.</p>
+        <p data-translate="footer-tagline">AI & Cloud Engineer | Building the future with technology</p>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add active class to navigation on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 60) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Image slider for Talan Summer Camp
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slider-image');
-        
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        
-        // Auto-slide every 3 seconds
-        setInterval(nextSlide, 3000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
