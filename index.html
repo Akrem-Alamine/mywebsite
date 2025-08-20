@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akrem ALAMINE - AI & Cloud Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            background: #ddd;
+            background-image: url('PDP.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: #3498db;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .experience-item,
+        .education-item,
+        .project-item,
+        .cert-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .experience-item:hover,
+        .education-item:hover,
+        .project-item:hover,
+        .cert-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .item-date {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        .item-company {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-description ul {
+            margin-left: 1.5rem;
+        }
+        
+        .item-description li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .award-badge {
+            background: #f39c12;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            background: #ecf0f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #bdc3c7;
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Akrem ALAMINE</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#hackathons">Hackathons</a></li>
+                <li><a href="#volunteering">Volunteering</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-img"></div>
+            <h1>Akrem ALAMINE</h1>
+            <p>AI & Cloud Engineer | Full-Stack Developer | Innovation Enthusiast</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>akrem.alamine@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+216 93 510 084</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://www.linkedin.com/in/akrem-alamine/" style="color: white;">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://www.github.com/Akrem-Alamine" style="color: white;">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Cloud Engineer Intern</div>
+                    <div class="item-company">RIF (Rassemblement des Ingénieurs Francophones)</div>
+                    <div style="color: #7f8c8d;">Paris, France (Remote)</div>
+                </div>
+                <div class="item-date">07/2025 -- Present</div>
+            </div>
+            <div class="item-description">
+                <ul>
+                    <li>Design and implementation of a private cloud architecture with 99.9% availability</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">AI Engineer Intern</div>
+                    <div class="item-company">Talan Tunisia</div>
+                    <div style="color: #7f8c8d;">Tunis, Tunisia (Full-time - On site)</div>
+                </div>
+                <div class="item-date">07/2025 -- Present</div>
+            </div>
+            <div class="item-description">
+                <ul>
+                    <li>Development of an AI tool to support entrepreneurs from ideation to market launch</li>
+                    <li>Built end-to-end AI platform using LangChain, LangGraph, Python, and Next.js</li>
+                </ul>
+                <div class="award-badge">🏆 Gold Prize & First Place - Talan Summer Camp 2025</div>
+                
+                <div class="gallery" style="margin-top: 2rem;">
+                    <div class="gallery-item">
+                        <div class="gallery-img">🏆</div>
+                        <div class="gallery-content">
+                            <h4>Award Ceremony</h4>
+                            <p>Receiving the gold prize at Talan Summer Camp 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-img">💻</div>
+                        <div class="gallery-content">
+                            <h4>Brand Orb AI Demo</h4>
+                            <p>Live demonstration of the AI platform features</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-img">👥</div>
+                        <div class="gallery-content">
+                            <h4>Team Collaboration</h4>
+                            <p>Working with the development team at Talan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Software Development Intern</div>
+                    <div class="item-company">Société Variété Industrielle</div>
+                    <div style="color: #7f8c8d;">Tunis, Tunisia</div>
+                </div>
+                <div class="item-date">07/2024 -- 09/2024</div>
+            </div>
+            <div class="item-description">
+                <ul>
+                    <li>Developed a Flutter application for remote control of outdoor lighting via ESP8266</li>
+                    <li>Integrated IoT protocols enabling real-time control</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <h2>Education</h2>
+        
+        <div class="education-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Engineering Degree in Computer Science</div>
+                    <div class="item-company">Faculty of Sciences of Tunis</div>
+                    <div style="color: #7f8c8d;">Tunis, Tunisia</div>
+                </div>
+                <div class="item-date">2023 - Present</div>
+            </div>
+            <div class="item-description">
+                <ul>
+                    <li><strong>Cloud, Networks & DevOps:</strong> Advanced AWS experience, cloud deployment, IP/industrial/wireless networks, security of on-premises and cloud infrastructures</li>
+                    <li><strong>Advanced Java/JEE Development:</strong> In-depth mastery of Java, Java EE (servlets, JSP, EJB), web and distributed application design</li>
+                    <li><strong>Programming Languages:</strong> C/C++, PHP, SQL, PL/SQL, HTML, CSS, JavaScript</li>
+                    <li><strong>Databases & System Administration:</strong> Database management, Linux administration, distributed systems</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Two-Year Preparatory Classes in Computer Science</div>
+                    <div class="item-company">Faculty of Sciences of Tunis</div>
+                    <div style="color: #7f8c8d;">Tunis, Tunisia</div>
+                </div>
+                <div class="item-date">2021 - 2023</div>
+            </div>
+            <div class="item-description">
+                <ul>
+                    <li><strong>Mathematics & Physics:</strong> Advanced calculus, linear algebra, differential equations, mechanics, and electromagnetism</li>
+                    <li><strong>Computer Science Fundamentals:</strong> Algorithms, data structures, programming fundamentals, and computational thinking</li>
+                    <li><strong>Core Programming:</strong> Introduction to C/C++, Python, and object-oriented programming concepts</li>
+                    <li><strong>Academic Excellence:</strong> Strong foundation in theoretical computer science and mathematical modeling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        
+        <a href="https://github.com/Akrem-Alamine/brand-orb-ai" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Brand Orb AI - End-to-End Brand Development Platform</div>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>AI-powered platform guiding entrepreneurs from ideation to market launch with automated brand identity creation and social media deployment.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">LangGraph</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">AI Agents</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Akrem-Alamine/aws-web-deployment" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">AWS Web Application Deployment</div>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>High-availability cloud architecture with frontend, backend, database, storage, monitoring, and security.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">S3</span>
+                    <span class="tech-tag">ALB</span>
+                    <span class="tech-tag">Auto Scaling</span>
+                    <span class="tech-tag">CloudWatch</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Akrem-Alamine/car-rental-soa" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Car Rental Web Application - SOA Architecture</div>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>Service-oriented architecture implementation for car rental management system.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">SOA</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Akrem-Alamine/flutter-iot-lighting" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Flutter IoT Lighting Control Application</div>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>Mobile application for remote control of outdoor lighting systems using IoT protocols.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">ESP8266</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">WebSocket</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <section id="certifications" class="section">
+        <h2>Certifications</h2>
+        
+        <a href="https://www.credly.com/badges/your-azure-fundamentals-badge" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="cert-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Microsoft Certified: Azure Fundamentals</div>
+                    </div>
+                    <div class="item-date">19/11/2024</div>
+                </div>
+                <div class="item-description">
+                    <p>Demonstrated basic knowledge of cloud services and their provisioning via Microsoft Azure.</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=your-oci-badge" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="cert-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Oracle Cloud Infrastructure 2025 Certified Foundations Associate</div>
+                    </div>
+                    <div class="item-date">19/07/2025</div>
+                </div>
+                <div class="item-description">
+                    <p>Validation of fundamental knowledge of the main public cloud services of Oracle Cloud Infrastructure (OCI).</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://www.credly.com/badges/your-aviatrix-ace-badge" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="cert-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Multicloud Network Associate – Aviatrix Certified Engineer (ACE)</div>
+                    </div>
+                    <div class="item-date">01/08/2025</div>
+                </div>
+                <div class="item-description">
+                    <p>Validates understanding of basic networking and security concepts across AWS, Azure, GCP, and OCI.</p>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <section id="hackathons" class="section">
+        <h2>Hackathons & Competitions</h2>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-img">🏆</div>
+                <div class="gallery-content">
+                    <h3>Talan Summer Camp 2025</h3>
+                    <p>Gold Prize & First Place for Brand Orb AI - End-to-End Brand Development Platform</p>
+                    <div class="award-badge">🥇 Winner</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-img">🥈</div>
+                <div class="gallery-content">
+                    <h3>SMU Hackathon</h3>
+                    <p>Second Place for innovative technology solution</p>
+                    <div class="award-badge" style="background: #95a5a6;">🥈 Second Place</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="volunteering" class="section">
+        <h2>Volunteering & Community</h2>
+        
+        <div class="gallery">
+            <div class="gallery-item" style="grid-column: 1 / -1;">
+                <div class="gallery-img" style="height: auto; padding: 2rem; background: linear-gradient(135deg, #4285f4 0%, #ea4335 25%, #34a853 50%, #fbbc04 75%, #4285f4 100%);">
+                    <div style="color: white; text-align: center;">
+                        <h3 style="margin-bottom: 1rem;">GDGC FST Journey</h3>
+                        <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌱</div>
+                                <div style="font-weight: bold;">Member</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">1st Year</div>
+                            </div>
+                            <div style="color: white; font-size: 1.5rem;">→</div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+                                <div style="font-weight: bold;">Media Manager</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">2nd Year</div>
+                            </div>
+                            <div style="color: white; font-size: 1.5rem;">→</div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
+                                <div style="font-weight: bold;">Leader & Organizer</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">3rd Year</div>
+                            </div>
+                            <div style="color: white; font-size: 1.5rem;">→</div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏅</div>
+                                <div style="font-weight: bold;">Mentor</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Current</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <h3>Google Developer Groups on Campus FST - Complete Journey</h3>
+                    <p>Four-year progressive journey from member to mentor in Google Developer Groups on Campus at Faculty of Sciences of Tunis, demonstrating leadership growth and community dedication.</p>
+                    <div class="award-badge" style="background: linear-gradient(135deg, #4285f4, #ea4335);">🎯 Complete Leadership Path</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-img">🤝</div>
+                <div class="gallery-content">
+                    <h3>Tech Community Engagement</h3>
+                    <p>Active participant in local tech meetups and open-source contributions</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-img">📚</div>
+                <div class="gallery-content">
+                    <h3>Knowledge Sharing</h3>
+                    <p>Mentoring junior developers and sharing expertise in AI and cloud technologies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Akrem ALAMINE. All rights reserved.</p>
+        <p>AI & Cloud Engineer | Building the future with technology</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to navigation on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
