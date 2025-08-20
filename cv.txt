@@ -1,0 +1,112 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\geometry{margin=0.7in, top=0.5in}
+\usepackage{graphicx}
+\usepackage{fontawesome}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+
+\definecolor{darkblue}{RGB}{10,10,90}
+\definecolor{graytext}{RGB}{90,90,90}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=darkblue
+}
+
+\titleformat{\section}
+  {\Large\bfseries\color{darkblue}}
+  {}{0em}{}
+
+\begin{document}
+
+\begin{center}
+    \begin{minipage}[c]{0.2\textwidth}
+        \begin{tikzpicture}
+            \clip (0,0) circle(1.25cm);
+            \node[anchor=center] at (0,0) {\includegraphics[width=2.5cm,height=2.5cm,keepaspectratio]{PDP.jpg}};
+        \end{tikzpicture}
+    \end{minipage}%
+    \begin{minipage}[c]{0.75\textwidth}
+        \vspace{1mm}
+        {\Huge \textbf{Akrem ALAMINE}} \\
+        \href{mailto:akrem.alamine@gmail.com}{akrem.alamine@gmail.com} | +216 93 510 084 \\
+        \href{https://www.linkedin.com/in/akrem-alamine/}{linkedin.com/in/akrem-alamine} | \href{https://www.github.com/Akrem-Alamine}{github.com/Akrem-Alamine} 
+    \end{minipage}
+\end{center}
+
+\setlength{\parskip}{2pt} % Reduce space between paragraphs and items
+\setlist[itemize]{itemsep=1pt, topsep=2pt} % Reduce space in itemize lists
+
+\section*{Professional Experience}
+\textbf{Cloud Engineer Intern, RIF (Rassemblement des Ingénieurs Francophones)} \hfill 07/2025 -- Present \\
+Paris, France (Remote) \\
+\vspace{-10pt}
+\begin{itemize}
+    \item Design and implementation of a private cloud architecture with 99.9\% availability.
+\end{itemize}
+
+\textbf{AI Engineer Intern, Talan Tunisia} \hfill 07/2025 -- Present \\
+Tunis, Tunisia (Full-time - On site) \\
+\vspace{-10pt}
+\begin{itemize}
+    \item Development of an AI tool to support entrepreneurs from ideation to market launch.
+    \item Won gold prize and first place at Talan SummerCamp 2025 for innovative AI-powered business solution.
+\end{itemize}
+
+\textbf{Intern, Société Variété Industrielle} \hfill 07/2024 -- 09/2024 \\
+Tunis, Tunisia \\
+\vspace{-10pt}
+\begin{itemize}
+    \item Developed a Flutter application for remote control of outdoor lighting via ESP8266.
+    \item Integrated IoT protocols enabling real-time control.
+\end{itemize}
+
+\section*{Education}
+\textbf{Engineering Degree in Computer Science, Faculty of Sciences of Tunis} \hfill 2021 - Present \\
+Tunis, Tunisia \\
+\vspace{-10pt}
+\begin{itemize}
+    \item \textbf{Cloud, Networks \& DevOps}: Advanced AWS experience, cloud deployment, IP/industrial/wireless networks, security of on-premises and cloud infrastructures.
+    \item \textbf{Advanced Java/JEE Development}: In-depth mastery of Java, Java EE (servlets, JSP, EJB), web and distributed application design, management of complex Java projects.
+    \item \textbf{Programming Languages}: C/C++, PHP, SQL, PL/SQL, HTML, CSS, JavaScript.
+    \item \textbf{Databases \& System Administration}: Database management, Linux administration, distributed systems (Java).
+\end{itemize}
+
+\section*{Projects}
+\begin{itemize}[leftmargin=0.5cm]
+    \item \textbf{Brand Orb AI - End-to-End Brand Development Platform} \\
+    (Python, Next.js, TypeScript, LangChain, LangGraph, FastAPI, AI Agents) \\
+    AI-powered platform guiding entrepreneurs from ideation to market launch with automated brand identity creation and social media deployment. Won gold prize at Talan Summer Camp 2025.
+    % Cloud/DevOps projects first
+    \item \textbf{Deployment of a web application on AWS.} \\
+    (AWS, React, Flask, MySQL, S3, ALB, Auto Scaling, CloudWatch) \\
+    High-availability cloud architecture with frontend, backend, database, storage, monitoring, and security.
+    \item \textbf{Car rental web application based on SOA architecture.} \\
+    (Skills: SOA, Node.js, Express.js, REST API, XAMPP, MySQL, HTML/CSS)
+    % Java projects next
+    \item \textbf{Flutter application for outdoor lighting control.} \\
+    (Skills: Flutter, ESP8266, Firebase, WebSocket)
+\end{itemize}
+
+\section*{Certifications}
+
+\textbf{Microsoft Certified: Azure Fundamentals} \hfill 19/11/2024 \\
+\vspace{-10pt}
+
+
+\textbf{Oracle Cloud Infrastructure 2025 Certified Foundations Associate} \hfill 19/07/2025 \\
+\vspace{-10pt}
+
+
+\textbf{Multicloud Network Associate – Aviatrix Certified Engineer (ACE)} \hfill 01/08/2025 \\
+\vspace{-10pt}
+
+
+
+\end{document}
